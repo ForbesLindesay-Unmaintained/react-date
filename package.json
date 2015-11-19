@@ -11,7 +11,7 @@
     "occasion": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "^0.12.2"
+    "react": "^0.14.3"
   },
   "devDependencies": {
     "browserify-middleware": "^4.1.0",
