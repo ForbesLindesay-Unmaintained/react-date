@@ -3,7 +3,7 @@
 An input that parses and formats dates using dehumanize-date and occasion.
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/react-date/master.svg)](https://travis-ci.org/ForbesLindesay/react-date)
-[![Dependency Status](https://img.shields.io/gemnasium/ForbesLindesay/react-date.svg)](https://gemnasium.com/ForbesLindesay/react-date)
+[![Dependency Status](https://img.shields.io/david/ForbesLindesay/react-date.svg)](https://david-dm.org/ForbesLindesay/react-date)
 [![NPM version](https://img.shields.io/npm/v/react-date.svg)](https://www.npmjs.org/package/react-date)
 
 ## Installation
