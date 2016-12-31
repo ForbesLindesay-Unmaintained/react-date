@@ -1,6 +1,6 @@
 {
   "name": "react-date",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An input that parses and formats dates using dehumanize-date and occasion",
   "keywords": [
     "react",
