@@ -30,12 +30,13 @@ module.exports = React.createClass({
       textContent: ''
     };
   },
+
   render: function () {
     var props = {};
     for (var key in this.props) {
       if (key in this.props) {
         if (['value', 'defaultValue', 'valueLink', 'onChange',
-             'format', 'parse', 'onBlur', 'onInvalid', 'onValid'].indexOf(key) === -1) {
+             'format', 'parse', 'onBlur', 'onInvalid', 'onValid', 'inputRef'].indexOf(key) === -1) {
           props[key] = this.props[key];
         }
       }
@@ -51,6 +52,9 @@ module.exports = React.createClass({
     }
     props.onChange = this._handleChange;
     props.onBlur = this._handleBlur;
+    if (this.props.inputRef) {
+      props.ref = this.props.inputRef;
+    }
     return React.createElement('input', props);
   },
   _parse: function (value) {
