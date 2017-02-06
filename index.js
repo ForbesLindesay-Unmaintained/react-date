@@ -44,7 +44,8 @@ module.exports = React.createClass({
     var value = LinkedValueUtils.getValue(this);
     value = value != null ? value : this.state.currentValue;
     if (this.state.isEditing && (
-      null === parse(this.state.textContent) || value === parse(this.state.textContent)
+//      null === parse(this.state.textContent) || value === parse(this.state.textContent)
+      null === this._parse(this.state.textContent) || value === this._parse(this.state.textContent)
     )) {
       props.value = this.state.textContent;
     } else {
@@ -87,7 +88,7 @@ module.exports = React.createClass({
     var value = e.target.value;
     this.setState({textContent: value, isEditing: true});
     var returnValue;
-    value = value ? parse(value) : '';
+    value = value ? this._parse(value) : '';
     if (value !== null) {
       var invalid = this.props.required && !value;
       if (!invalid && this.state.invalid && this.props.onValid) {
