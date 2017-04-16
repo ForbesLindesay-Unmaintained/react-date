@@ -1,5 +1,7 @@
 # react-date
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/react-date.svg)](https://greenkeeper.io/)
+
 An input that parses and formats dates using dehumanize-date and occasion.
 
 [![Build Status](https://img.shields.io/travis/ForbesLindesay/react-date/master.svg)](https://travis-ci.org/ForbesLindesay/react-date)
