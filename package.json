@@ -7,7 +7,7 @@
     "react-component"
   ],
   "dependencies": {
-    "dehumanize-date": "^2.0.1",
+    "dehumanize-date": "^2.2.1",
     "occasion": "^1.0.0"
   },
   "peerDependencies": {
