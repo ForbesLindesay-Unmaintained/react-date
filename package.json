@@ -1,6 +1,10 @@
 {
   "name": "react-date",
   "version": "1.0.2",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
   "description": "An input that parses and formats dates using dehumanize-date and occasion",
   "keywords": [
     "react",
@@ -8,19 +12,23 @@
   ],
   "dependencies": {
     "dehumanize-date": "^2.0.1",
-    "occasion": "^1.0.0"
+    "occasion": "^1.0.0",
+    "prop-types": "^15.5.8"
   },
   "peerDependencies": {
-    "react": "^15.4.2"
+    "react": "^0.13.3 || ^0.14.8 || ^15.5.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-forbeslindesay": "^2.1.0",
     "browserify-middleware": "^7.1.0",
     "express": "^4.10.6",
     "mocha": "^3.2.0",
-    "react": "^15.4.2"
+    "react": "^15.5.4",
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "prepublish": "npm run build",
+    "build": "babel src --out-dir lib",
   },
   "repository": {
     "type": "git",

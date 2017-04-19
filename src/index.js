@@ -1,37 +1,40 @@
 'use strict';
 
 var React = require('react');
+var PropTypes = require('prop-types');
 var format = require('occasion');
 var parse = require('dehumanize-date');
-var LinkedValueUtils = require('./lib/linked-value-utils');
+var LinkedValueUtils = require('./linked-value-utils');
 
-module.exports = React.createClass({
-  propTypes: {
-    defaultValue: React.PropTypes.string,
-    value: React.PropTypes.string,
-    onChange: React.PropTypes.func,
-    onBlur: React.PropTypes.func,
-    onInvalid: React.PropTypes.func,
-    onValid: React.PropTypes.func,
-    format: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.func
+class ReactDate extends React.Component {
+  static propTypes = {
+    defaultValue: PropTypes.string,
+    value: PropTypes.string,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
+    onInvalid: PropTypes.func,
+    onValid: PropTypes.func,
+    format: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.func
     ]),
-    parse: React.PropTypes.oneOfType([
-      React.PropTypes.oneOf(['us', 'US']),
-      React.PropTypes.func
+    parse: PropTypes.oneOfType([
+      PropTypes.oneOf(['us', 'US']),
+      PropTypes.func
     ])
-  },
-  getInitialState: function() {
-    var defaultValue = this.props.defaultValue;
-    return {
+  };
+
+  constructor(props) {
+    super(props);
+    var defaultValue = props.defaultValue;
+    this.state = {
       currentValue: defaultValue != null ? defaultValue : null,
       isEditing: false,
       textContent: ''
     };
-  },
+  }
 
-  render: function () {
+  render() {
     var props = {};
     for (var key in this.props) {
       if (key in this.props) {
@@ -56,8 +59,9 @@ module.exports = React.createClass({
       props.ref = this.props.inputRef;
     }
     return React.createElement('input', props);
-  },
-  _parse: function (value) {
+  }
+
+  _parse(value) {
     if (typeof this.props.parse === 'string' && this.props.parse.toLowerCase() === 'us') {
       return parse(value, true);
     } else if (typeof this.props.parse === 'function') {
@@ -65,8 +69,9 @@ module.exports = React.createClass({
     } else {
       return parse(value);
     }
-  },
-  _format: function (value) {
+  }
+
+  _format(value) {
     if (/^\d\d\d\d\-\d\d\-\d\d$/.test(value)) {
       if (typeof this.props.format === 'function') {
         return this.props.format(value);
@@ -76,14 +81,16 @@ module.exports = React.createClass({
     } else {
       return value;
     }
-  },
-  _handleBlur: function (e) {
+  }
+
+  _handleBlur = (e) => {
     this.setState({isEditing: false});
     if (this.props.onBlur) {
       return this.props.onBlur.call(this, e);
     }
-  },
-  _handleChange: function(e) {
+  }
+
+  _handleChange = (e) => {
     var value = e.target.value;
     this.setState({textContent: value, isEditing: true});
     var returnValue;
@@ -113,4 +120,6 @@ module.exports = React.createClass({
     }
     return returnValue;
   }
-});
+}
+
+module.exports = ReactDate;

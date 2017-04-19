@@ -5,30 +5,15 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule LinkedValueUtils
- * @typechecks static-only
  */
 
 "use strict";
-
-var React = require('react');
 
 function invariant(value, err) {
   if (!value) {
     throw new Error(err);
   }
 }
-
-var hasReadOnlyValue = {
-  'button': true,
-  'checkbox': true,
-  'image': true,
-  'hidden': true,
-  'radio': true,
-  'reset': true,
-  'submit': true
-};
 
 function _assertSingleLink(input) {
   invariant(
@@ -77,41 +62,6 @@ function _handleLinkedCheckChange(e) {
  * this outside of the ReactDOM controlled form components.
  */
 var LinkedValueUtils = {
-  Mixin: {
-    propTypes: {
-      value: function(props, propName, componentName) {
-        if (!props[propName] ||
-            hasReadOnlyValue[props.type] ||
-            props.onChange ||
-            props.readOnly ||
-            props.disabled) {
-          return;
-        }
-        return new Error(
-          'You provided a `value` prop to a form field without an ' +
-          '`onChange` handler. This will render a read-only field. If ' +
-          'the field should be mutable use `defaultValue`. Otherwise, ' +
-          'set either `onChange` or `readOnly`.'
-        );
-      },
-      checked: function(props, propName, componentName) {
-        if (!props[propName] ||
-            props.onChange ||
-            props.readOnly ||
-            props.disabled) {
-          return;
-        }
-        return new Error(
-          'You provided a `checked` prop to a form field without an ' +
-          '`onChange` handler. This will render a read-only field. If ' +
-          'the field should be mutable use `defaultChecked`. Otherwise, ' +
-          'set either `onChange` or `readOnly`.'
-        );
-      },
-      onChange: React.PropTypes.func
-    }
-  },
-
   /**
    * @param {ReactComponent} input Form component
    * @return {*} current value of the input either from value prop or link.
@@ -122,19 +72,6 @@ var LinkedValueUtils = {
       return input.props.valueLink.value;
     }
     return input.props.value;
-  },
-
-  /**
-   * @param {ReactComponent} input Form component
-   * @return {*} current checked status of the input either from checked prop
-   *             or link.
-   */
-  getChecked: function(input) {
-    if (input.props.checkedLink) {
-      _assertCheckedLink(input);
-      return input.props.checkedLink.value;
-    }
-    return input.props.checked;
   },
 
   /**
