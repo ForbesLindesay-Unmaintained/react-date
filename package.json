@@ -20,15 +20,24 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-jest": "^19.0.0",
     "babel-preset-forbeslindesay": "^2.1.0",
     "browserify-middleware": "^7.1.0",
+    "cross-spawn": "^5.1.0",
+    "enzyme": "^2.8.2",
     "express": "^4.10.6",
+    "jest": "^19.0.2",
     "mocha": "^3.2.0",
+    "peer-tester": "^1.0.5",
     "react": "^15.5.4",
+    "semver": "^5.3.0"
   },
   "scripts": {
+    "pretest": "node pretest",
     "prepublish": "npm run build",
     "build": "babel src --out-dir lib",
+    "test": "jest ./src/** --coverage && peer-tester",
+    "watch": "jest ./src/** --coverage --watch"
   },
   "repository": {
     "type": "git",
