@@ -1,7 +1,7 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import ReactDate from '../';
-console.log(require('react/package.json').version);
+
 test('defaultValue', () => {
   const onChange = jest.fn();
   const onValid = jest.fn();
