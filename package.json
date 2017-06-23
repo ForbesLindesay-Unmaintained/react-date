@@ -11,30 +11,32 @@
     "react-component"
   ],
   "dependencies": {
-    "dehumanize-date": "^2.0.1",
-    "occasion": "^1.0.0",
-    "prop-types": "^15.5.8"
+    "dehumanize-date": "2.4.0",
+    "occasion": "2.0.0",
+    "prop-types": "^15.5.10",
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1"
   },
   "peerDependencies": {
-    "react": "^0.13.3 || ^0.14.8 || ^15.5.4"
+    "react": "^0.13.3 || ^0.14.8 || ^15.6.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-jest": "^19.0.0",
-    "babel-preset-forbeslindesay": "^2.1.0",
-    "browserify-middleware": "^7.1.0",
-    "cross-spawn": "^5.1.0",
-    "enzyme": "^2.8.2",
-    "express": "^4.10.6",
-    "jest": "^19.0.2",
-    "mocha": "^3.2.0",
-    "peer-tester": "^1.0.5",
-    "react": "^15.5.4",
-    "semver": "^5.3.0"
+    "babel-cli": "6.24.1",
+    "babel-jest": "20.0.3",
+    "babel-preset-forbeslindesay": "2.1.0",
+    "browserify-middleware": "7.1.0",
+    "cross-spawn": "5.1.0",
+    "enzyme": "^2.9.0",
+    "express": "^4.15.3",
+    "jest": "20.0.4",
+    "mocha": "^3.4.2",
+    "peer-tester": "^1.0.6",
+    "react": "^15.6.1",
+    "semver": "5.3.0"
   },
   "scripts": {
     "pretest": "node pretest",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "build": "babel src --out-dir lib",
     "test": "jest ./src/** --coverage && peer-tester",
     "watch": "jest ./src/** --coverage --watch"
