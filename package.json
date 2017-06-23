@@ -11,28 +11,28 @@
     "react-component"
   ],
   "dependencies": {
-    "dehumanize-date": "2.4.0",
-    "occasion": "2.0.0",
-    "prop-types": "^15.5.10",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1"
+    "dehumanize-date": "^2.4.0",
+    "occasion": "^2.0.0",
+    "prop-types": "^15.5.10"
   },
   "peerDependencies": {
     "react": "^0.13.3 || ^0.14.8 || ^15.6.1"
   },
   "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-jest": "20.0.3",
-    "babel-preset-forbeslindesay": "2.1.0",
-    "browserify-middleware": "7.1.0",
-    "cross-spawn": "5.1.0",
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.0",
+    "babel-preset-forbeslindesay": "^2.1.0",
+    "browserify-middleware": "^7.1.0",
+    "cross-spawn": "^5.1.0",
     "enzyme": "^2.9.0",
     "express": "^4.15.3",
-    "jest": "20.0.4",
+    "jest": "^20.0.4",
     "mocha": "^3.4.2",
     "peer-tester": "^1.0.6",
     "react": "^15.6.1",
-    "semver": "5.3.0"
+    "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
+    "semver": "^5.3.0"
   },
   "scripts": {
     "pretest": "node pretest",
