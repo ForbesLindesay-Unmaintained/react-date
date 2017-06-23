@@ -12,7 +12,7 @@
   ],
   "dependencies": {
     "dehumanize-date": "^2.0.1",
-    "occasion": "^1.0.0",
+    "occasion": "^2.0.0",
     "prop-types": "^15.5.8"
   },
   "peerDependencies": {
