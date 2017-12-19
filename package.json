@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-jest": "^20.0.0",
+    "babel-jest": "^22.0.3",
     "babel-preset-forbeslindesay": "^2.1.0",
     "browserify-middleware": "^7.1.0",
     "cross-spawn": "^5.1.0",
