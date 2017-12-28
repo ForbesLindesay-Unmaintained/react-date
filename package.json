@@ -24,7 +24,7 @@
     "babel-preset-forbeslindesay": "^2.1.0",
     "browserify-middleware": "^7.1.0",
     "cross-spawn": "^5.1.0",
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.3.0",
     "express": "^4.15.3",
     "jest": "^20.0.4",
     "mocha": "^3.4.2",
