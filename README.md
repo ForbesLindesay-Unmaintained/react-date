@@ -1,6 +1,6 @@
-# react-date
+> I'm not maintaining this anymore as I found that attempting to parse & format the date as part of the input component makes it very complex as you have to store all the potentially invalid states.  It's much easier to handle at the overall form level - format the default date when you first initialise the form, then parse the value immediately before submitting it.
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/react-date.svg)](https://greenkeeper.io/)
+# react-date
 
 An input that parses and formats dates using dehumanize-date and occasion.
 
