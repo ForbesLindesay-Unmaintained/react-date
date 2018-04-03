@@ -16,30 +16,30 @@
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
-    "react": "^0.13.3 || ^0.14.8 || ^15.6.1"
+    "react": "^0.13.3 || ^0.14.8 || ^15.6.1 || ^16.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-jest": "^20.0.0",
+    "babel-jest": "^22.2.0",
     "babel-preset-forbeslindesay": "^2.1.0",
     "browserify-middleware": "^7.1.0",
     "cross-spawn": "^6.0.0",
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.15.3",
-    "jest": "^20.0.4",
+    "jest": "^22.2.1",
     "mocha": "^3.4.2",
     "peer-tester": "^1.0.6",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-test-renderer": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "semver": "^5.3.0"
   },
   "scripts": {
     "pretest": "node pretest",
     "prepare": "npm run build",
     "build": "babel src --out-dir lib",
-    "test": "jest ./src/** --coverage && peer-tester",
-    "watch": "jest ./src/** --coverage --watch"
+    "test": "jest ./src/__tests__/** --coverage && peer-tester",
+    "watch": "jest ./src/__tests__/** --coverage --watch"
   },
   "repository": {
     "type": "git",
